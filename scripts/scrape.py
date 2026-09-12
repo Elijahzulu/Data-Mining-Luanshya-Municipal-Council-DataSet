@@ -40,6 +40,7 @@ re-run after an interruption — anything already downloaded is skipped.
 from __future__ import annotations
 
 import csv
+import hashlib
 import re
 import time
 from dataclasses import dataclass
@@ -84,6 +85,15 @@ CRAWL_FOR_LINKS = [
 # How many news-archive pages to walk looking for ?p=NNNN post links.
 NEWS_ARCHIVE_PAGES = 15
 
+# The council names some PDFs very verbosely (100+ chars). Windows' default
+# MAX_PATH is 260 characters for the *whole* path, and a project folder
+# nested inside a synced drive (OneDrive/Google Drive export, etc.) can
+# easily eat 150+ of those on its own — leaving too little room for a long
+# filename. Cap filenames well under that so the scraper doesn't crash
+# partway through a run just because of where the repo happens to be checked
+# out.
+MAX_FILENAME_LEN = 100
+
 
 @dataclass
 class FetchResult:
@@ -105,12 +115,27 @@ def _verify_for(url: str) -> bool:
     return urlparse(url).netloc not in UNVERIFIED_HOSTS
 
 
+def _shorten_filename(name: str, url: str) -> str:
+    """Truncate an overly-long filename, keeping it unique by appending a
+    short hash of the source URL. See MAX_FILENAME_LEN above for why."""
+    if len(name) <= MAX_FILENAME_LEN:
+        return name
+    if "." in name:
+        stem, ext = name.rsplit(".", 1)
+        ext = "." + ext
+    else:
+        stem, ext = name, ""
+    digest = hashlib.sha1(url.encode("utf-8")).hexdigest()[:8]
+    keep = max(1, MAX_FILENAME_LEN - len(ext) - len(digest) - 1)
+    return f"{stem[:keep]}-{digest}{ext}"
+
+
 def _safe_name_from_url(url: str) -> str:
     parsed = urlparse(url)
     if parsed.path and parsed.path not in ("", "/"):
         name = parsed.path.rstrip("/").split("/")[-1]
         if name:
-            return name
+            return _shorten_filename(name, url)
     qs = parse_qs(parsed.query)
     if "page_id" in qs:
         return f"page_{qs['page_id'][0]}.html"
