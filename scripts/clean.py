@@ -495,27 +495,27 @@ def main() -> None:
 
     print("== Building document index ==")
     doc_index = build_document_index()
-    doc_index.to_csv(PROCESSED / "db-unza26-csc4792-team9-document-index.csv", index=False)
+    doc_index.to_csv(PROCESSED / "db-unza26-csc4792-team9-document-index.csv", index=False, sep="|")
     n_pdf = (doc_index.doc_type == "pdf").sum()
     n_no_text = ((doc_index.doc_type == "pdf") & (doc_index.has_text_layer == False)).sum()  # noqa: E712
     print(f"  {len(doc_index)} documents indexed ({n_pdf} PDFs, {n_no_text} with no usable text layer)")
 
     print("== Extracting CDF beneficiary/project person-level records ==")
     people = extract_person_records(doc_index)
-    people.to_csv(PROCESSED / "db-unza26-csc4792-team9-cdf-beneficiaries.csv", index=False)
+    people.to_csv(PROCESSED / "db-unza26-csc4792-team9-cdf-beneficiaries.csv", index=False, sep="|")
     print(f"  {len(people)} beneficiary rows from "
           f"{people.source_document.nunique() if not people.empty else 0} documents")
 
     print("== Extracting budget line items ==")
     budget = extract_budget_lines(doc_index)
-    budget.to_csv(PROCESSED / "db-unza26-csc4792-team9-budget-lines.csv", index=False)
+    budget.to_csv(PROCESSED / "db-unza26-csc4792-team9-budget-lines.csv", index=False, sep="|")
     print(f"  {len(budget)} budget line rows from "
           f"{budget.source_document.nunique() if not budget.empty else 0} documents")
 
     print("== Extracting news posts ==")
     wards = set(people["ward"].dropna().unique()) if not people.empty else set()
     news = extract_news_posts(doc_index, wards)
-    news.to_csv(PROCESSED / "db-unza26-csc4792-team9-news-posts.csv", index=False)
+    news.to_csv(PROCESSED / "db-unza26-csc4792-team9-news-posts.csv", index=False, sep="|")
     print(f"  {len(news)} news posts")
 
     n_project_list = (doc_index.category == "cdf_project_list").sum()

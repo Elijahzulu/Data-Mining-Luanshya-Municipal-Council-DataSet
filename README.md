@@ -34,7 +34,8 @@ See `Contributors.md` for the team list.
   the council fixes it.
 
 - **Cleaning is done for most of the corpus.** `scripts/clean.py` turns
-  `data/raw/` into four tidy CSVs in `data/processed/`:
+  `data/raw/` into four tidy CSVs in `data/processed/` (pipe `|` separated,
+  per the course's output convention — pass `sep='|'` to `pd.read_csv`):
   - `db-unza26-csc4792-team9-document-index.csv` — one row per raw file
     (all 128), with category, page count, and whether it had a usable text
     layer. Start here to see what's covered.
@@ -108,7 +109,7 @@ notebook.ipynb        # required deliverable notebook, built incrementally
 | IDP | [District IDP 2023–2033](https://www.luanshyacouncil.gov.zm/wp-content/uploads/2023/11/LUANSHYA-DISTRICT-INTEGRATED-DEVELOPMENT-PLAN-2023-2033.pdf) |
 | Notices / resolutions / ward programs | Council news posts (by-laws, full council meeting, ward cash-for-work, DCC meeting minutes, etc.) — see `sources_seed.csv` |
 | Legal / regulatory | Local Government Act, Urban and Regional Planning Act, Public Procurement Act & Regulations, Constitution of Zambia amendment |
-| LGEF | Not yet located as a standalone council document — worth a dedicated search pass |
+| LGEF | Not a standalone document, but present as a real line item ("Local Government Equalisation Fund", code 004) inside the budget PDFs already scraped — already extracted into `db-unza26-csc4792-team9-budget-lines.csv` |
 
 Full list with URLs: `data/raw/sources_seed.csv`.
 
@@ -128,9 +129,10 @@ Full list with URLs: `data/raw/sources_seed.csv`.
       exists once Tracks A/B have produced processed CSVs.
 - [ ] **Track D — Kaggle upload + dataset documentation**: once CSVs are
       stable.
-- [ ] **LGEF-specific search**: no dedicated Luanshya LGEF document found
-      yet — needs its own search pass (may be in the budget PDF as a line
-      item rather than a standalone doc).
+- [x] **LGEF-specific search**: resolved — it's a real line item ("Local
+      Government Equalisation Fund") inside the budget PDFs already
+      scraped, not a standalone document; already extracted into
+      `db-unza26-csc4792-team9-budget-lines.csv`.
 
 Keep this README updated as the source of truth for "what's claimed, what's
 open" so no one duplicates work.
