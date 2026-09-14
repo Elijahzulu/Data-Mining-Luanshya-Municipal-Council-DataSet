@@ -54,6 +54,19 @@ See `Contributors.md` for the team list.
   - `db-unza26-csc4792-team9-news-posts.csv` — all 16 news posts, with
     published date, wards mentioned, and Kwacha amounts mentioned pulled
     out of the body text.
+- **Coverage cross-validated against an independent crawl.** Rather than
+  trusting this branch's own crawl coverage on faith, `scripts/validate_coverage.py`
+  checks it against a second, independently written crawler that teammate
+  Blessing Yabe designed and ran separately (`data/raw/blessing_independent_crawl/`
+  — see its own README there). 136 URLs were found by both crawls
+  independently — that agreement is the actual evidence of coverage. The
+  handful of differences are explainable rather than missed data: mostly
+  WordPress navigation/pagination artifacts and duplicate permalink forms on
+  her side, individual news-post permalinks and documents published after
+  her crawl ran on this branch's side, plus one genuine crawler bug her
+  crawl surfaced (an off-domain PDF picked up from a different council's
+  site). Full detail in `data/processed/db-unza26-csc4792-team9-coverage-validation.csv`
+  and notebook section 6.
 - **Known, real limitation — not a bug to "fix" later:** roughly half the
   PDFs (53 of 105) are CamScanner-style phone photographs with no text
   layer at all, several of them the most recent (2026) CDF beneficiary
@@ -94,9 +107,11 @@ known limitations to draw on).
 ```
 data/raw/             # untouched scraped output (HTML, PDFs) + manifest.csv
 data/raw/sources_seed.csv   # hand-curated + crawl-discovered list of source URLs
+data/raw/blessing_independent_crawl/  # independent crawl (Blessing Yabe), used for coverage cross-validation
 data/processed/       # tidy db-unza26-csc4792-team9-*.csv files for submission
 scripts/scrape.py     # downloads raw source material
 scripts/clean.py      # raw -> tidy CSV(s) — see its docstring for coverage/limitations
+scripts/validate_coverage.py  # cross-checks coverage against the independent crawl
 notebook.ipynb        # required deliverable notebook, built incrementally
 ```
 
