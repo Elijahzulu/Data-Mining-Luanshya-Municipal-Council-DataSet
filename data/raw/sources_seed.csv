@@ -1,0 +1,50 @@
+category,title,url,notes
+nav_page,CDF,https://www.luanshyacouncil.gov.zm/?page_id=3525,CDF landing page - tracker + guidelines link from homepage
+nav_page,Publications,https://www.luanshyacouncil.gov.zm/?page_id=959,Publications/downloads listing page
+nav_page,Contact Us,https://www.luanshyacouncil.gov.zm/?page_id=275,
+nav_page,Who We Are,https://www.luanshyacouncil.gov.zm/?page_id=118,
+nav_page,About Luanshya Town,https://www.luanshyacouncil.gov.zm/?page_id=1548,
+nav_page,Services,https://www.luanshyacouncil.gov.zm/?page_id=792,
+nav_page,Homepage,https://www.luanshyacouncil.gov.zm/?page_id=2072,"unclear content, verify on crawl"
+budget,2025 Output Based Annual Budget,https://www.luanshyacouncil.gov.zm/wp-content/uploads/2025/04/LUANSHYA-BUDGET-2025.pdf,PDF
+budget,Financial Statements 2023,https://www.luanshyacouncil.gov.zm/wp-content/uploads/2024/12/Financial-Statements-2023-1.pdf,PDF
+budget,Auditors Report 2023,https://www.luanshyacouncil.gov.zm/wp-content/uploads/2024/12/Auditors-Report-2023.pdf,PDF
+budget,Financial Statement 2022,https://www.luanshyacouncil.gov.zm/wp-content/uploads/2024/09/LMC-Financial-Statement-2022.pdf,PDF
+idp,Luanshya District Integrated Development Plan 2023-2033,https://www.luanshyacouncil.gov.zm/wp-content/uploads/2023/11/LUANSHYA-DISTRICT-INTEGRATED-DEVELOPMENT-PLAN-2023-2033.pdf,PDF - large planning document
+cdf,2025 Skills Development - Luanshya Constituency,https://www.luanshyacouncil.gov.zm/wp-content/uploads/2024/12/2025-SKILLS-LUANSHYA-CONSTITUENCY.pdf,CDF-funded skills program list
+cdf,2025 Secondary Bursaries - Luanshya Constituency,https://www.luanshyacouncil.gov.zm/wp-content/uploads/2024/12/2025-SECONDARY-BURSARIES-LUANSHYA-CONSTITUENCY.pdf,CDF-funded bursary list
+misc,Market Price Index Q4 2025 (ZPPA),https://www.luanshyacouncil.gov.zm/wp-content/uploads/2025/12/ZPPA-MPI-2025-Q4.pdf,PDF
+misc,SOP Community Sport (Min. of Youth Sport and Arts),https://www.luanshyacouncil.gov.zm/wp-content/uploads/2025/03/SOP_Community_Sport_Final_Signed.pdf,PDF
+news,TC Ndilema technocrats visit Roan/Luanshya PCEI CDF solar plants,https://www.luanshyacouncil.gov.zm/?p=4367,news post - CDF project
+news,Authorities welcome new Luanshya TC Collins Ndilema,https://www.luanshyacouncil.gov.zm/?p=3993,news post
+news,K24 million Luanshya/Roan CDF projects commissioned,https://www.luanshyacouncil.gov.zm/?p=4221,news post - CDF project amounts
+news,CB PS Mwanza calls for stronger local authorities,https://www.luanshyacouncil.gov.zm/?p=4373,news post
+news,Luanshya CDF resolves to fund K10 million PCEI solar plant,https://www.luanshyacouncil.gov.zm/?p=4088,news post - CDF resolution
+news,New bus terminus - CBD traffic management by-law,https://www.luanshyacouncil.gov.zm/?p=4156,news post - by-law/resolution
+news,308 Mpelembe ward households benefit from cash for work,https://www.luanshyacouncil.gov.zm/?p=1468,news post - ward-level program
+news,Schools feeding program boost - DDCC members,https://www.luanshyacouncil.gov.zm/?p=4199,news post
+news,Full council meeting in pictures,https://www.luanshyacouncil.gov.zm/?p=4208,news post - possible resolutions context
+news,Mayor visits Mipundu area after heavy rains,https://www.luanshyacouncil.gov.zm/?p=3975,news post
+news,ECZ tips aspiring candidates on adoption certificates,https://www.luanshyacouncil.gov.zm/?p=4263,news post
+news,International Women's Day - LMC female employees,https://www.luanshyacouncil.gov.zm/?p=4123,news post
+external,"2021 Councillor Election Results (ECZ, national)",https://www.elections.org.zm/wp-content/uploads/2022/09/2021-CouncilorResults.pdf,"External source (Electoral Commission of Zambia) - filter to Luanshya wards for councillor/ward name mapping"
+cdf,Final CDF Guidelines February 2022,https://www.luanshyacouncil.gov.zm/wp-content/uploads/2023/10/FINAL-CDF-GUIDELINES-FEBRUARY-2022-1.pdf,"PDF - found via teammate's crawl on main branch, missing from original seed list"
+misc,CDF Press Statement,https://www.luanshyacouncil.gov.zm/wp-content/uploads/2023/10/Press-Statement-CDF-1.pdf,"PDF - found via teammate's crawl on main branch"
+cdf,CDF Bursary Application Form,https://www.luanshyacouncil.gov.zm/wp-content/uploads/2023/11/CDF-Bursary-Application-Form.pdf,"PDF - found via teammate's crawl on main branch"
+cdf,CDF Grant Application Form,https://www.luanshyacouncil.gov.zm/wp-content/uploads/2023/11/CDF-Grant-Application-Form.pdf,"PDF - found via teammate's crawl on main branch"
+cdf,Loan Empowerment Application Form,https://www.luanshyacouncil.gov.zm/wp-content/uploads/2023/11/LOAN-EMPOWERMENT-APPLICATION-FORM-FINAL-202-12-2022.pdf,"PDF - found via teammate's crawl on main branch"
+misc,Application for Certificate of Compliance,https://www.luanshyacouncil.gov.zm/wp-content/uploads/2023/12/APPLICATION-FOR-CERTIFICATE-OF-COMPLIANCE.pdf,"PDF - found via teammate's crawl on main branch"
+misc,Fire Application Forms,https://www.luanshyacouncil.gov.zm/wp-content/uploads/2023/12/Fire-Application-Forms.pdf,"PDF - found via teammate's crawl on main branch"
+misc,Health Permit Form (Booth),https://www.luanshyacouncil.gov.zm/wp-content/uploads/2023/12/HEALTH-PERMIT-FORM_BOOTH.pdf,"PDF - found via teammate's crawl on main branch"
+misc,Retail Business Application Forms,https://www.luanshyacouncil.gov.zm/wp-content/uploads/2023/12/Retail-Business-Application-Forms.pdf,"PDF - found via teammate's crawl on main branch"
+misc,Public Procurement Regulations 2022,https://www.luanshyacouncil.gov.zm/wp-content/uploads/2025/03/Public-Procurement-Regulations-2022.pdf,"PDF - found via teammate's crawl on main branch"
+misc,The Public Procurement Act No. 8 of 2020,https://www.luanshyacouncil.gov.zm/wp-content/uploads/2025/03/The-Public-Procurement-Act-No.-8-of-2020.pdf,"PDF - found via teammate's crawl on main branch"
+misc,The Urban and Regional Planning Act No 3 of 2015,https://www.luanshyacouncil.gov.zm/wp-content/uploads/2025/03/The-Urban-and-Regional-Planning-Act-No-3-of-2015.pdf,"PDF - found via teammate's crawl on main branch"
+misc,Constitution of Zambia Amendment 2016 Act No. 2,https://www.luanshyacouncil.gov.zm/wp-content/uploads/2025/07/Constitution-of-Zambia-Amendment-2016-Act-No.-2_0.pdf,"PDF - found via teammate's crawl on main branch"
+misc,The Local Government Act No. 2 of 2019,https://www.luanshyacouncil.gov.zm/wp-content/uploads/2025/07/The-Local-Government-Act-No.-2-of-2019.pdf,"PDF - found via teammate's crawl on main branch"
+cdf,Approved Community Stakeholder Engagement Meeting on CDF Review,https://www.luanshyacouncil.gov.zm/wp-content/uploads/2025/08/Approved-Community-Stakeholder-Engagement-Meeting-on-CDF-Review.pdf,"PDF - found via teammate's crawl on main branch"
+cdf,LMC 2024 Community Projects,https://www.luanshyacouncil.gov.zm/wp-content/uploads/2025/08/LMC-2024-Community-Projects.pdf,"PDF - found via teammate's crawl on main branch"
+budget,Luanshya Bi-Annual Performance Report 2025,https://www.luanshyacouncil.gov.zm/wp-content/uploads/2025/08/Luanshya-Bi-Annual-Performance-Report-2025.pdf,"PDF - found via teammate's crawl on main branch"
+resolution,Luanshya District 2024 4Q Development Coordinating Committee Meeting,https://www.luanshyacouncil.gov.zm/wp-content/uploads/2025/08/Luanshya-District-2024-4Q-Development-Coordinating-Committee-Meeting.pdf,"PDF - found via teammate's crawl on main branch"
+misc,Stakeholder Engagement Plan,https://www.luanshyacouncil.gov.zm/wp-content/uploads/2025/08/Sttakeholder-Engagement-Plan.pdf,"PDF - found via teammate's crawl on main branch; note site's own filename typo (Sttakeholder)"
+misc,ZDSP About,https://www.luanshyacouncil.gov.zm/wp-content/uploads/2025/12/ZDSP-About.pdf,"PDF - found via teammate's crawl on main branch"
