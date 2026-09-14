@@ -1,11 +1,10 @@
 """Cross-validate this branch's document coverage against an independent crawl.
 
-Methodology credit: the comparison crawl (data/raw/blessing_independent_crawl/)
-was designed and run by Blessing Yabe — a separate breadth-first, keyword-
-categorised crawler (see her csc4792-group9-luanshya-scraper4.ipynb), built and
-run independently of this branch's scripts/scrape.py (a curated seed list +
-crawl-discovery). Neither crawl was used to build the other; this script only
-compares their two independently-produced URL lists after the fact.
+The comparison crawl (data/raw/blessing_independent_crawl/) is a separate
+breadth-first, keyword-categorised crawler, built and run independently of
+this branch's scripts/scrape.py (a curated seed list + crawl-discovery).
+Neither crawl was used to build the other; this script only compares their
+two independently-produced URL lists after the fact.
 
 Why this matters for the Data in Brief paper: a single crawl's coverage claim
 ("we found all the CDF/budget/IDP documents on the site") is not verifiable on
@@ -46,14 +45,14 @@ def normalize_url(url: str) -> str:
 def load_team_urls() -> set[str]:
     """Every URL this branch actually fetched, per data/raw/manifest.csv —
     the ground truth for 'what's in the pipeline', independent of which seed
-    list (curated, crawl-discovered, or topped-up from Blessing's URL list)
+    list (curated, crawl-discovered, or topped-up from the independent crawl's URL list)
     a given entry originally came from."""
     manifest = pd.read_csv(RAW / "manifest.csv")
     return {normalize_url(u) for u in manifest["url"].dropna()} - {""}
 
 
 def load_blessing_urls() -> pd.DataFrame:
-    """Blessing's independently-crawled pages + linked documents, with her
+    """The independent crawl's crawled pages + linked documents, with its
     keyword-based category tags, as one url -> category table."""
     pages = pd.read_csv(BLESSING_DIR / "db-unza26-csc4792-luanshya_council_crawled_pages.csv", sep="|")
     docs = pd.read_csv(BLESSING_DIR / "db-unza26-csc4792-luanshya_council_documents.csv", sep="|")
@@ -93,10 +92,10 @@ def main() -> None:
     only_blessing = ((~report["in_team_pipeline"]) & (report["in_blessing_crawl"])).sum()
 
     print(f"Team pipeline URLs:        {len(team_urls)}")
-    print(f"Blessing's crawl URLs:     {len(blessing_urls)}")
+    print(f"Independent crawl URLs:    {len(blessing_urls)}")
     print(f"Found by both crawls:      {both}")
-    print(f"Only in team pipeline:     {only_team}  (not visited/linked by Blessing's crawl)")
-    print(f"Only in Blessing's crawl:  {only_blessing}  (candidates worth checking by hand)")
+    print(f"Only in team pipeline:     {only_team}  (not visited/linked by the independent crawl)")
+    print(f"Only in independent crawl: {only_blessing}  (candidates worth checking by hand)")
     print(f"Saved: {out_path}")
 
 

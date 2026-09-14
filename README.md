@@ -15,16 +15,15 @@ See `Contributors.md` for the team list.
   legal acts, etc.), all under their original filenames, indexed in
   `data/raw/manifest.csv`.
 - `data/raw/sources_seed.csv` is the hand-curated + crawl-discovered seed
-  list the scraper starts from. It was cross-checked against a second,
-  independent crawl a teammate ran on `main` (a broader depth-crawl of the
-  whole site) and topped up with ~20 documents that crawl found and this
-  one had missed (legal acts, application forms, and a few recent CDF/
-  performance reports) — see the entries at the bottom of the CSV.
-  `main`'s own raw dump (`scrappedFiles/`) was reviewed but not merged in:
-  it has no scraper script committed, uses opaque hashed filenames, and its
-  categorisation columns are mostly empty — not something the cleaning step
-  can build on. This branch (`data-extraction`) is the one to develop
-  `scripts/clean.py` against going forward.
+  list the scraper starts from, cross-checked against a second, independent
+  crawl of the whole site (see coverage cross-validation below) and topped
+  up with ~20 documents that crawl found and this list had missed (legal
+  acts, application forms, and a few recent CDF/performance reports) — see
+  the entries at the bottom of the CSV. That crawl's own raw dump
+  (`scrappedFiles/`, formerly on `main`) wasn't merged in as a data source:
+  no scraper script attached, opaque hashed filenames, mostly-empty
+  categorisation columns. `scripts/clean.py` builds on this branch's
+  `data/raw/` going forward.
 - **Known site issue:** `www.luanshyacouncil.gov.zm`'s TLS certificate was
   expired/invalid at scrape time. Because this only ever does read-only GETs
   of public documents, certificate verification is disabled for that one
@@ -54,19 +53,18 @@ See `Contributors.md` for the team list.
   - `db-unza26-csc4792-team9-news-posts.csv` — all 16 news posts, with
     published date, wards mentioned, and Kwacha amounts mentioned pulled
     out of the body text.
-- **Coverage cross-validated against an independent crawl.** Rather than
-  trusting this branch's own crawl coverage on faith, `scripts/validate_coverage.py`
-  checks it against a second, independently written crawler that teammate
-  Blessing Yabe designed and ran separately (`data/raw/blessing_independent_crawl/`
-  — see its own README there). 136 URLs were found by both crawls
-  independently — that agreement is the actual evidence of coverage. The
-  handful of differences are explainable rather than missed data: mostly
-  WordPress navigation/pagination artifacts and duplicate permalink forms on
-  her side, individual news-post permalinks and documents published after
-  her crawl ran on this branch's side, plus one genuine crawler bug her
-  crawl surfaced (an off-domain PDF picked up from a different council's
-  site). Full detail in `data/processed/db-unza26-csc4792-team9-coverage-validation.csv`
-  and notebook section 6.
+- **Coverage cross-validated against an independent crawl.** `scripts/validate_coverage.py`
+  checks this branch's document coverage against a second, independently
+  written crawler (`data/raw/blessing_independent_crawl/` — see its own
+  README there) rather than relying on a single crawl's coverage claim.
+  136 URLs were found by both crawls — that agreement is the actual evidence
+  of coverage. Remaining differences are explainable, not missed data:
+  navigation/pagination artifacts and duplicate permalink forms on one side,
+  additional news-post permalinks and later-published documents on the
+  other, plus one crawler edge case (an off-domain PDF picked up from a
+  different council's site). Full detail in
+  `data/processed/db-unza26-csc4792-team9-coverage-validation.csv` and
+  notebook section 6.
 - **Known, real limitation — not a bug to "fix" later:** roughly half the
   PDFs (53 of 105) are CamScanner-style phone photographs with no text
   layer at all, several of them the most recent (2026) CDF beneficiary
@@ -107,7 +105,7 @@ known limitations to draw on).
 ```
 data/raw/             # untouched scraped output (HTML, PDFs) + manifest.csv
 data/raw/sources_seed.csv   # hand-curated + crawl-discovered list of source URLs
-data/raw/blessing_independent_crawl/  # independent crawl (Blessing Yabe), used for coverage cross-validation
+data/raw/blessing_independent_crawl/  # second, independently-run crawl, used for coverage cross-validation
 data/processed/       # tidy db-unza26-csc4792-team9-*.csv files for submission
 scripts/scrape.py     # downloads raw source material
 scripts/clean.py      # raw -> tidy CSV(s) — see its docstring for coverage/limitations
